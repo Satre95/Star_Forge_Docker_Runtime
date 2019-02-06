@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+
+
+<Background g="0.0" a="0.0" />
+
+<Stencil value="true" />
+<MultiThreaded value="CullDrawThreadPerContext" />
+<PreSwapOperation value="FINISH" />
+<SyncToVBlank value="On" />
+<Near value="1"/>
+<Far value="1000000" />
+<CullingMode value="CALVR" /> <!-- CALVR | DEFAULT -->
+<MultiSample value="4" />
+
+<ShowAxis value="off" />
+
+<ConfigDebug value="false" />
+<EventDebug value="false" />
+
+<Input>
+	<TrackingDebug value="false" />
+	<TrackingSystem0 value="MOUSE">
+		<Offset x="0" y="0" z="0" />
+		<Orientation h="0" p="0" r="0" />
+
+		<NumBodies value="1" />
+		<NumButtons value="3" />
+		<NumValuators value="0" />
+
+		<Body0>
+			<Offset x="0" y="0" z="0" />
+			<Orientation h="0" p="0" r="0" />
+		</Body0>
+	</TrackingSystem0>
+
+	<NumHeads value="0" />
+	<Head0Address system="0" body="0" />
+
+	<NumHands value="1" />
+	<Hand0>
+		<Address system="0" body="0" />
+		<ButtonMask system0="0xFF"  />
+		<Valuator0 system="0" number="0" type="NON_ZERO" />
+	</Hand0>
+</Input>
+
+<Plugin>
+	<StarForge value="on">
+		<NumRepulsors value="1" />
+		<NumAttractors value="1" />
+		<AssetsPath value="/opt/Assets/StarForge/"/>
+		<ShadersPath value="/usr/local/shaders/" />
+		<UniversePosition x="0" y="0" z="0" />
+		<OAS ip="127.0.0.1" port="31231" />
+		<AudioTrack file="sounds/AudioTrack.wav" gain="1.f"/>
+
+		<AnimationPath>
+			<NumPoints value="15" />
+			<Point1 x="0" y="0" z="0.0" w="0"/>
+			<Point2 x="0" y="-250" z="0" w="5" /> 
+
+			<Point3 x="-176.77" y="-323.22" z="0" w="10" /> 
+			<Point4 x="-250" y="-500" z="0" w="15" />
+
+			<Point5 x="-176.77" y="-676.77" z="0" w="20" />
+			<Point6 x="0" y="-750" z="0" w="25" /> 
+
+			<Point7 x="176.77" y="-676.77" z="0" w="30" />
+			<Point8 x="250" y="-500" z="0" w="35" />
+			
+			<Point9 x="176.77" y="-323.22" z="0" w="40" />
+			<Point10 x="0" y="-250" z="0" w="45" />
+			<Point11 x="0" y="-390" z="-100" w="45.1" />
+
+			 <!-- Corresponds to end of phase 1 -->
+
+			<Point12 x="0" y="-390" z="-100" w="45.1"/>
+			<Point13 x="0" y="-390" z="-100" w="68" /> 
+			<!-- Corresponds to end of phase 2 -->
+			
+			<Point14 x="0" y="-500" z="0" w="71"/>
+			<Point15 x="0" y="-500" z="0" w="209"/> 
+			<!-- Corresponds to end of phase 3 -->
+		</AnimationPath>
+
+		<Phase1>
+			<SkyboxPath value="skyboxes/Belawor/" />
+			<Fades>
+				<FadeInTime value="0.0" />
+				<FadeInDuration value="7.2" />
+				<FadeOutTime value="42" />
+				<FadeOutDuration value="3" />
+			</Fades>
+			<Colors>
+				<NumColors value="4"/> <!-- If you change this value, make sure to update constant in shader! -->
+				<Color1 x="0.3" y="0.23" z="0.115" />
+				<Color2 x="0.212" y="0.702" z="0.761" />
+				<Color3 x="0.392" y="0.341" z="0.240" />
+				<Color4 x="0.2118" y="0.302" z="0.4392" />
+			</Colors>
+		</Phase1>
+
+		<Phase2>
+			<SkyboxPath value="skyboxes/Utaie/" />
+			<Fades>
+				<FadeInTime value="45.0" />
+				<FadeInDuration value="5.0" />
+				<FadeOutTime value="68.0" />
+				<FadeOutDuration value="3" />
+			</Fades>
+			<Colors>
+				<NumColors value="5"/> <!-- If you change this value, make sure to update constant in shader! -->
+				<Color1 x="0.8" y="0.1529" z="0.115" />
+				<Color2 x="0.8821" y="0.592" z="0.1216" />
+				<Color3 x="0.8001" y="0.9647" z="0.8901" />
+				<Color4 x="0.7137" y="0.7882" z="0.8549" />
+				<Color5 x="0.8118" y="0.6157" z="0.5098" />
+			</Colors>
+		</Phase2>
+
+		<Phase3>
+			<SkyboxPath value="skyboxes/Phipa/" />
+			<Fades>
+				<FadeInTime value="71" />
+				<FadeInDuration value="2.0" />
+				<FadeOutTime value="200" />
+				<FadeOutDuration value="9" />
+			</Fades>
+			<Colors>
+				<NumColors value="6"/> <!-- If you change this value, make sure to update constant in shader! -->
+				<Color1 x="0.3333" y="0.7529" z="0.7882" />
+				<Color2 x="0.3137" y="0.1765" z="0.2824" />
+				<Color3 x="0.9333" y="0.5216" z="0.2667" />
+				<Color4 x="0.6863" y="0.5569" z="0.2784" />
+				<Color5 x="0.0627" y="0.1098" z="0.2235" />
+				<Color6 x="0.2941" y="0.6549" z="0.7059" />
+			</Colors>
+		</Phase3>
+	</StarForge>
+
+</Plugin>
+
+<ContextMenus>
+	<Scale value="1.0" />
+	<MinDistance value="750" />
+	<MaxDistance value="1500" />
+	<DefaultOpenButton value="1" />
+</ContextMenus>
+
+<MenuSystem type="BOARDMENU">
+	<BoardMenu>
+		<Position distance="2000" />
+		<Scale value="1.0" />
+		<Buttons select="0" open="1" />
+		<Trigger value="DOUBLECLICK" />
+	</BoardMenu>
+</MenuSystem>
+
+
+<ViewerPosition x="0" y="-500" z="0" />
+<SceneSize value="20000" />
+
+<NumPipes value="1" />
+<NumWindows value="1" />
+<NumScreens value="1" />
+
+<PipeConfig>
+	<Pipe server="1" screen="0" name="0" />
+</PipeConfig>
+
+<ChannelConfig>
+	<Channel width="1920" height="1080" left="0" botton="0" stereoMode="MONO" comment="Main" windowIndex="0" name="0" />
+</ChannelConfig>
+
+<WindowConfig>
+	<Window width="1920" height="1080" comment="MAIN" pipeIndex="0"  left="50" bottom="50" name="0" decoration="false" overrideRedirect="false" />
+</WindowConfig>
+
+
+<ScreenConfig>
+	<Screen width="1920" comment="FRONT" h="0.0" originX="0" originY="0" originZ="0" height="1080" p="0.0" r="0.0" name="0" />
+</ScreenConfig>
+

@@ -1,0 +1,19 @@
+
+FROM satre95/calvr_runtime:latest
+
+USER root
+
+# Install the Plugins.
+RUN mkdir /usr/local/lib/plugins
+ADD CVRPlugins/lib/plugins/* /usr/local/lib/
+ADD CVRPlugins/shaders/* /usr/local/shaders/
+# Install the config
+ADD config/* /usr/local/config/
+
+# Update runtime paths.
+RUN ldconfig
+
+# Copy the assets folder.
+ADD Assets.tar.gz /opt
+
+USER calvr
