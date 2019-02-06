@@ -1,0 +1,2 @@
+Assets.tar.gz filter=lfs diff=lfs merge=lfs -text
+CVRPlugins/** filter=lfs diff=lfs merge=lfs -text
